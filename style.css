@@ -1,0 +1,585 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none; /*ne reconnait pas  les listes non ordonnées et ne les ajoute pas dans l'arbre d'accessibilité */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+header {
+  z-index: 1000;
+  width: 100%;
+  height: 70px;
+  background-color: #ffff;
+  /* border: 2px solid black; /*bordure navbar*/
+  display: flex;
+  /* flex-direction : row */
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  position: fixed;
+  top: 0;
+  box-shadow: -2px 6px 21px -7px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -2px 6px 21px -7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -2px 6px 21px -7px rgba(0, 0, 0, 0.5);
+}
+header img {
+  height: 33px;
+  width: auto;
+}
+header nav {
+  height: 100%;
+  width: 252px;
+}
+.menu {
+  height: 100%;
+  width: 252px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #ababab;
+  font-size: 15px;
+  font-weight: 400; /*l'epeseur du police*/
+  cursor: pointer; /*changer le curseur par doit*/
+}
+/*le temp du changement du couleur -> .menu-item:hover */
+.menu-item {
+  transition: 0.5s;
+  height: 100%;
+  line-height: 70px;
+}
+
+.menu-item:hover {
+  /* :hover -> le couleur change avec l'action du curseur*/
+  color: #00b39b;
+}
+
+.drop-menu {
+  display: none;
+  position: absolute;
+  color: #ababab;
+  background: #ffff;
+  transition: 0.5s;
+}
+
+.menu-item:hover .drop-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 220px;
+  width: 220px;
+  padding: 10px 0 0 0;
+  /*border: 2px solid black;*/
+  margin-left: -110px;
+  margin-top: -20px;
+  box-shadow: -2px 6px 21px -1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: -2px 6px 21px -1px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -2px 6px 21px -1px rgba(0, 0, 0, 0.5);
+}
+
+.drop-menu-item {
+  line-height: 18px;
+  font-size: 15px;
+  text-align: left;
+  height: 42px;
+  width: 220px;
+  transition: 0.5s;
+  padding: 12px 16px 12px 16px; /*centrer le text dans son contenu*/
+}
+.drop-menu-item:hover {
+  color: #00b39b;
+  background-color: #ababab62;
+}
+
+/* main */
+main {
+  margin-top: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#intro {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 409px;
+  width: 100%;
+}
+#intro img {
+  width: 40px;
+  height: auto;
+}
+#intro h1 {
+  font-family: "work sans", Arial, Helvetica, sans-serif;
+  color: #00b39b;
+  font-size: 34px;
+  font-weight: 300;
+}
+.para-cont {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.para-cont p {
+  margin: 13px 0 13px 0;
+  font-family: "roboto", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  height: 112px;
+  width: 46%;
+  color: #747474;
+}
+.cards-container {
+  width: 106%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card {
+  height: 345px;
+  width: 312px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 32px 0 32px;
+  color: white;
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+.card img {
+  height: 24px;
+  width: 24px;
+  margin-bottom: 5px;
+}
+
+.card h4 {
+  font-family: "work sans", Arial, Helvetica, sans-serif;
+  margin-top: -95px;
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 400;
+}
+.card p {
+  font-family: "work sans", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: 300;
+  height: 87px;
+  width: 248px;
+  margin-top: -100px;
+}
+.card select {
+  border: none;
+  background: #ababab10;
+  color: white;
+  font-family: "roboto", Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  text-decoration: underline;
+  line-height: 25px;
+  cursor: pointer;
+  margin-bottom: 35px;
+}
+
+.card select option {
+  color: black;
+}
+
+#twoto20 {
+  margin-bottom: 15px;
+}
+.green {
+  background-color: #00ccb1;
+
+  animation: greenAnim 2s ease 0s 1 normal forwards;
+}
+
+.blue {
+  background: #3d83df;
+  animation: blueAnim 3s ease 0s 1 normal forwards;
+}
+.black {
+  background: #1b2734;
+  animation: blackAnim 5s ease 0s 1 normal forwards;
+}
+
+@keyframes greenAnim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes blueAnim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blackAnim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 1;
+    transform: translateX(48px);
+  }
+}
+.xblack h4 {
+  margin-top: -70px;
+}
+.xblack p {
+  margin-top: -70px;
+}
+.card-bg {
+  border-radius: 10px;
+}
+
+.green:hover {
+  background: #62ecda;
+}
+
+.blue:hover {
+  background: #5495eb;
+}
+.black:hover {
+  background: #344557;
+}
+/*sponsors section*/
+.logo-container svg {
+  fill: gray;
+  height: 45px;
+  width: 165px;
+  margin: 5px 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.logo-container img {
+  height: 25px;
+  width: auto;
+  filter: grayscale(100%);
+  margin: 5px 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.logo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 70%;
+}
+.sponsors {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 40px 0px;
+  padding: 0 0 26 0;
+}
+
+.sponsors h2 {
+  font-family: "work sans", Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  width: 200px;
+  color: #00b39b;
+  font-weight: 300;
+  line-height: 33px;
+  padding: 0 0 26 0;
+  margin: 7px 40px 9px 0;
+}
+.logo-container svg:hover {
+  fill: #00b39b;
+}
+.logo-container img:hover {
+  filter: grayscale(0%);
+}
+.platform {
+  width: 106%;
+  height: 600px;
+  background-image: url("https://media.discordapp.net/attachments/1093497830917816403/1108684129622564955/Sans_titre-2.png?ex=6605350e&is=65f2c00e&hm=8865d7522222e180a0a75fce90cc5efee8eeb25a08ee027ab141b3a3db7399f9&=&format=webp&quality=lossless&width=1019&height=321");
+  background-position-x: -215px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 0px;
+  background-size: 150%;
+  background-repeat: no-repeat;
+}
+.plat-intro {
+  height: 202px;
+  width: 34%;
+}
+.plat-intro h4 {
+  font-family: "work sans", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 300%;
+  line-height: 44px;
+  color: #00b39b;
+  width: 70%;
+}
+.plat-intro p {
+  font-family: "roboto", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #747474;
+  margin: 22px 0px;
+  width: 82%;
+}
+.plat-card {
+  background-color: white;
+  height: 250px;
+  width: 228px;
+  padding: 15px;
+  border: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 10px;
+  animation: greenAnim 2s ease 0s 1 normal forwards;
+}
+@keyframes blackAnim {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.plat-card img {
+  width: 40px;
+  height: auto;
+}
+.plat-card h4 {
+  font-family: "work sans", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 200;
+  color: #00b39b;
+  margin: 12px;
+}
+.plat-card p {
+  font-family: "Robot", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  color: #747474;
+}
+.column-cont {
+  display: flex;
+}
+
+.column1 {
+  margin-top: -20px;
+}
+.column2 {
+  margin-top: -40px;
+}
+
+.countries {
+  width: 106%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 80px;
+}
+.countries h1 {
+  font-family: "work Sans", Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 39px;
+  text-align: center;
+  color: #00b39b;
+  height: 78px;
+  width: 460px;
+}
+.countries p {
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #747474;
+  height: 72px;
+  width: 460px;
+  margin: 22px 0px;
+}
+.count-card {
+  height: 342px;
+  width: 312px;
+  box-shadow: 3px 2px 5px 3px rgba(60, 60, 60, 0.06);
+  -webkit-box-shadow: 3px 2px 5px 3px rgba(60, 60, 60, 0.06);
+  -moz-box-shadow: 3px 2px 5px 3px rgba(60, 60, 60, 0.06);
+  margin: 10px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.count-card:hover {
+  box-shadow: 3px 2px 15px 14px rgba(60, 60, 60, 0.09);
+  -webkit-box-shadow: 3px 2px 15px 14px rgba(60, 60, 60, 0.09);
+  -moz-box-shadow: 3px 2px 153px 14px rgba(60, 60, 60, 0.09);
+}
+
+.count-card img {
+  width: 312px;
+  height: 270px;
+  border-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.count-card div {
+  width: 85%;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.count-card div button {
+  background: #3d83df;
+  color: white;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  width: 104px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.count-card div button:hover {
+  background: #316ab4;
+}
+.count-cont {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  margin-top: 50px;
+}
+
+.count-card div h6 {
+  font-size: 18px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  color: #747474;
+  line-height: 30px;
+  font-weight: 400;
+}
+.intro-countries h6 {
+  height: 1688px;
+  width: 1015;
+  margin: 30px;
+  padding: 0 20px 0 20px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: 400;
+}
+.count-end h5 {
+  font-size: 30px;
+  font-family: "work sans", Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  line-height: 39px;
+  margin-bottom: 23px;
+}
+
+.count-end button {
+  background: #3d83df;
+  color: white;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  width: 210px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.count-end button:hover {
+  background: #316ab4;
+}
+.count-end {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 70px 0px;
+}
+footer {
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #ababab;
+}
+footer p {
+  margin-bottom: 5px;
+}
+
+hr {
+  opacity: 20%;
+}
+
+span {
+  color: #4189e8;
+  transition: 0.5s;
+  cursor: pointer;
+}
+span:hover {
+  text-decoration: underline;
+}
+span a {
+  text-decoration: none;
+  color: #4189e8;
+}
+#first-p-footer {
+  margin-top: 19px;
+}
